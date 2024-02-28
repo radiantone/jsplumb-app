@@ -37,5 +37,9 @@ npm run format
 quasar build
 ```
 
+### JsPlumb Component
+
+https://github.com/radiantone/jsplumb-app/blob/main/src/components/ExampleComponent.vue
+
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
