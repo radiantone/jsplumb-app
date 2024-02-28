@@ -6,9 +6,7 @@
       obj.y +
       ';left:' +
       obj.x +
-      ';min-width:' +
-      obj.width +
-      '; z-index: 99999; background-color: blue'
+      ';width:500px;min-width:500px; z-index: 99999; background-color: blue'
     "
     @touchstart.stop
     @contextmenu.stop
