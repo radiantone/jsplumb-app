@@ -21,6 +21,7 @@
 </style>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
+import ScriptTemplate from 'src/components/templates/ScriptTemplate.vue'
 
 import { ready } from '@jsplumbtoolkit/browser-ui';
 import 'assets/css/jsplumbtoolkit-browser-ui-plugin-background.css';
@@ -57,7 +58,18 @@ export default defineComponent({
   },
   methods: {
     viewParams: function() {
-      return {};
+      return {
+        nodes: {
+          script: {
+            component: ScriptTemplate,
+            events: {
+              tap: function (params) {
+                console.log('ScriptTemplate:TAP',params)
+              }
+            }
+          }
+        }
+      };
     },
     toolkitParams: function() {
       return {};
