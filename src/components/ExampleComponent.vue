@@ -3,7 +3,7 @@
     ref="toolkitComponent"
     auto-save="false"
     class="jtk-surface"
-    surface-id="surfaceId"
+    :surface-id="surfaceId"
     id="toolkit"
     v-bind:render-params="this.renderParams()"
     v-bind:toolkit-params="this.toolkitParams()"
@@ -11,6 +11,10 @@
     style="overflow: hidden !important; height: 100vh; width: 100%"
   >
   </jsplumb-toolkit>
+  <jsplumb-miniview
+    style="background:grey;position:absolute;z-index:99999;min-width: 300px; min-height: 300px; top:100px; left:100px;"
+    :surface-id="surfaceId"
+  />
 </template>
 <style>
 .jtk-surface {
@@ -32,10 +36,22 @@ import 'assets/css/jsplumbtoolkit-edge-type-picker.css';
 
 export default defineComponent({
   name: 'ExampleComponent',
+  setup() {
+    const surfaceId = 'mysurface';
+
+    return {
+      surfaceId
+    }
+  },
   mounted() {
 
     ready(() => {
       let toolkit = this.$refs.toolkitComponent.toolkit;
+      let surface = this.$refs.toolkitComponent.surface;
+
+
+      surface.setZoom(1.0);
+      surface.setPan(0, 0);
       let node = {
             icon: 'las la-scroll',
             style: '',
@@ -49,8 +65,8 @@ export default defineComponent({
             columns: [],
             x: 500,
             y: 500,
-            top: 500,
-            left: 500,
+            top: 100,
+            left: 100,
             properties: [],
           }
       toolkit.addNode(node)

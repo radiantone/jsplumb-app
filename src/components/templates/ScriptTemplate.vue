@@ -2,81 +2,27 @@
   <div
     class="table node shadow-1 jtk-node"
     :style="
-      'top:' +
-      obj.y +
-      ';left:' +
-      obj.x +
-      ';width:500px;min-width:500px; z-index: 99999; background-color: blue'
+      'top:500px;height:200px;left:500px' +
+      ';width:500px;min-width:500px; z-index: 99999; background-color: lightgrey;'
     "
     @touchstart.stop
     @contextmenu.stop
   >
-    BLA BLA BLA BLA
+    A component
   </div>
 </template>
 
 <script>
+import { BaseNodeComponent } from '@jsplumbtoolkit/browser-ui-vue3';
+
 export default {
   name: 'ScriptTemplate',
+  mixins: [BaseNodeComponent],
   setup() {
     console.log('ScriptTemplate setup')
   },
-  data: function () {
-    return {
-      obj: {
-        language: 'Python',
-        icon: 'las la-scroll',
-        titletab: false,
-        consoleview: false,
-        portcounters: {},
-        receipt: new Date(),
-        notes: '',
-        style: '',
-        variabledata: [],
-        envfacts: true,
-        passenv: false,
-        infengine: true,
-        x: 500,
-        y: 500,
-        top: 500,
-        left: 500,
-        version: 'v1.2.2',
-        perworker: true,
-        ratelimit: '60',
-        websocket: 'xxxx',
-        bandwidth: true,
-        requirements: '',
-        gittag: '',
-        container: false,
-        imagerepo: 'local',
-        containerimage: 'xxxx',
-        environment: '',
-        usegit: true,
-        enabled: true,
-        endpoint: false,
-        beat: false,
-        streaming: true,
-        api: 'xxxx',
-        type: 'script',
-        name: 'Processor',
-        label: 'Script',
-        description: 'description',
-        package: 'package',
-        concurrency: 3,
-        cron: '* * * * *',
-        interval: -1,
-        useschedule: false,
-        disabled: false,
-        commit: '',
-        gitrepo:
-          'xxxxxx',
-        columns: [],
-        modulepath: 'xxx',
-        readwrite: 0,
-        status: 'stopped',
-        properties: [],
-      },
-    }
+  mounted () {
+    console.log('template mounted')
   }
 };
 </script>
